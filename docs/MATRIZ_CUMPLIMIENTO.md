@@ -15,7 +15,7 @@ La publicación del repositorio y el estado actual del CI se actualizaron despu�
 | Originalidad | Aplicación e integración al caso y evaluación propia | Documentar decisiones individuales; no atribuir invención de reconocimiento facial |
 | Metodología adecuada | PLAN_VALIDACION, separación de fases, bloqueo de duplicados y drift de sesión | Supervisar independencia real y registrar desvíos; confirmar criterios antes de prueba |
 | Producto de software | Panel, API, persistencia y modelos incluidos | Ensayo integral con hardware del interesado; el estudiante informó arranque Windows de 0.1 reparada |
-| Documentación y defensa | SSOT, fuentes, trazabilidad, protocolo, manual, guion | Repositorio propio, informe final con resultados reales y defensa practicada |
+| Documentación y defensa | Repositorio público, SSOT, fuentes, trazabilidad, protocolo, manual y guion | Informe final con resultados reales y defensa practicada |
 | Responsabilidad legal/social | Cifrado, consentimiento declarado, baja, observación anónima, alcance local | Autorizaciones, procedimiento informado y revisión del responsable para uso real |
 | Contenidos del diseño curricular | Datos/imágenes/modelos/postprocesamiento/visualización/informes | No se fuerzan habla, IoT u OCR; confirmar si existe una instrucción docente adicional |
 
