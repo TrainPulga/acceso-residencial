@@ -1,0 +1,21 @@
+name: Preparar escritorio Windows
+on:
+  workflow_dispatch:
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-desktop.txt -r requirements-dev.txt
+      - run: python descargar_modelos.py
+      - run: python -m pytest -q
+      - run: python crear_ejecutable.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AccesoResidencial-Windows-sin-firmar
+          path: dist/AccesoResidencial/
+          if-no-files-found: error
+          retention-days: 7

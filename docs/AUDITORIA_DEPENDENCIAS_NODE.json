@@ -1,0 +1,26 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {},
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "dependencies": {
+      "prod": 1,
+      "dev": 36,
+      "optional": 0,
+      "peer": 0,
+      "peerOptional": 0,
+      "total": 36
+    }
+  },
+  "scan_metadata": {
+    "date": "2026-10-17",
+    "scope": "Herramientas de desarrollo Node/jsdom del package-lock.json; no motor Qt de escritorio."
+  }
+}

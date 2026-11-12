@@ -1,0 +1,23 @@
+ACCESO RESIDENCIAL 0.7 - CONTROL PAD DE FOTOS/PANTALLAS
+
+1. Cierra la aplicacion y la consola anteriores.
+2. Extrae TODO el ZIP en una carpeta NUEVA.
+3. Abre ABRIR_ESCRITORIO.bat con la misma cuenta de Windows.
+4. Los datos de escritorio 0.3-0.6 se reutilizan; no vuelvas a importar.
+   Desde 0.1/0.2, importa la carpeta data original completa si corresponde.
+5. Se migra a esquema 6 con respaldo previo. Cuentas y rostros se conservan.
+   Se cierran las sesiones: volve a ingresar con usuario y contrasena.
+6. Selecciona e inicia una webcam o fuente USB/RTSP compatible.
+   Presenta un solo rostro y espera reconocimiento + PAD en varias capturas.
+7. NO se pide PIN. Una captura incierta/sospechosa o PAD no disponible
+   no habilita registro. El guardia revisa presencialmente.
+8. Cuando corresponda, confirma el cruce observado y Entrada o Salida.
+   No se acciona ninguna cerradura.
+
+La eficacia de PAD con personas/fotos/pantallas del edificio aun no se midio.
+Ver docs/PAD_0_7.md. No es un producto de seguridad certificado.
+
+Datos: %LOCALAPPDATA%\AccesoResidencial\data o ACCESO_DATA_DIR.
+No borres datos ni mezcles claves. No abras una version anterior sobre la base 6.
+No necesitas volver a entrenar ni registrar a todos por agregar PAD.
+El ZIP sigue requiriendo Python: no incluye EXE Windows compilado.

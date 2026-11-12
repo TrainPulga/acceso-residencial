@@ -1,0 +1,123 @@
+{
+  "version": "0.7.0",
+  "fecha": "2026-10-17",
+  "entorno": {
+    "sistema": "Linux",
+    "python": "3.12.14",
+    "pydantic": "2.14.1",
+    "pydantic_core": "2.50.1",
+    "idna": "3.20",
+    "constraints_verificadas": 25,
+    "nota": "Entorno aislado con dependencias del sistema; todas las 25 versiones fijadas verificadas contra metadatos instalados."
+  },
+  "pytest": {
+    "aprobados": 170,
+    "fallidos": 0,
+    "tiempo_segundos": 42.66,
+    "aviso": "Starlette/httpx: deprecación del cliente de pruebas"
+  },
+  "nuevo_verificado": [
+    "cuenta inicial: la clave antigua no sustituye una sesión",
+    "roles y permisos exigidos en API y menús de escritorio",
+    "contraseñas con sal, cambio inicial, reset y revocación",
+    "bloqueo temporal de login, expiración y cierre de sesiones",
+    "token de paso asociado al operador",
+    "restricciones residentes: entrada bloqueada y salida permitida",
+    "externos manuales sin biometría y asociación explícita a visita",
+    "operador autenticado en visitas y pasos nuevos",
+    "auditoría cifrada y cadena HMAC, truncación y retención con ancla",
+    "incidencia de auditoría, bloqueo y conciliación explícita",
+    "restauración conserva cuentas pero elimina sesiones previas",
+    "reporte vacío no inventa precisión",
+    "pruebas anteriores de datos, visitas, modelos y migraciones",
+    "26 casos parametrizados de regresión de seguridad en test_security_hardening.py",
+    "coincidencia sintética sin PIN no confirma entrada",
+    "PIN incorrecto, configuración presencial/roles, cambio y no divulgación",
+    "bloqueo PIN persistente entre capturas, vencimiento y baja",
+    "token de coincidencia ligado a sesión incluso con mismo operador",
+    "inactividad absoluta/renovable y máximo tres sesiones por cuenta",
+    "bloqueo login no eludible rotando origen",
+    "clave inicial Unicode incorrecta controlada",
+    "cuerpo chunked excesivo rechazado antes de aplicación",
+    "validación no refleja secreto y cabeceras en errores",
+    "fuentes HTTP/loopback/puertos/controles rechazadas sin abrir stream",
+    "formatos de imagen acotados",
+    "permisos POSIX de datos y respaldo, enlaces rechazados",
+    "migración 4 a 5 preserva cuentas y plantillas y revoca sesiones",
+    "reinicio del servicio revoca sesiones sin eliminar cuentas",
+    "contrato RGB/NCHW del ONNX PAD original y pesos auténticos",
+    "inferencia real PAD sobre ruido sintético: no mide eficacia humana",
+    "secuencia: identidad, sesión, cámara, tiempo y píxeles distintos",
+    "posible presentación, incertidumbre, falta de modelo y error no emiten token",
+    "alta rechazada si PAD falla",
+    "una captura mala posterior revoca token anterior; PIN/flags de cliente no lo sustituyen",
+    "fuente del servidor usa su captura y no acepta imágenes subidas atribuidas a ella",
+    "desconexión/reset revoca evidencia",
+    "ensayos PAD: consentimiento, fase/configuración, duplicados, métricas operativas/evaluables, exportación y borrado",
+    "backup/restore de ensayos PAD cifrados"
+  ],
+  "sintaxis_javascript": "node --check aprobado",
+  "compilacion_python": "compileall aprobado",
+  "referencias_DOM": {
+    "ids_unicos": 177,
+    "referencias_literales_presentes": true
+  },
+  "DOM_simulado_jsdom": [
+    "configuración inicial y login/logout",
+    "limpieza de datos y credenciales al salir",
+    "permisos visuales Administración/Seguridad",
+    "selector de webcam con medios simulados",
+    "vista complementaria solicita solo detección anónima",
+    "MediaRecorder simulado: descarga manual y descarte al salir",
+    "PAD pendiente/alerta/apto y registro sin PIN; frontend simulado, no eficacia del modelo"
+  ],
+  "HTTP_real": [
+    "Servidor 0.7.0/esquema 6 iniciado y cerrado",
+    "YuNet/SFace y anti-spoof-mn3 auténticos cargados",
+    "API con sesión y entrada sin PIN obligatorio",
+    "Apertura física permanece deshabilitada"
+  ],
+  "evidencia_usuario": "El estudiante informó funcionamiento básico de 0.3 en Windows; no es una evaluación biométrica formal.",
+  "no_comprobado": [
+    "renderer Qt y pantallas 0.7 en Windows",
+    "webcam/RTSP/MediaRecorder reales del equipo destino",
+    "precisión biométrica de participantes y efecto de condiciones",
+    "cerraduras, PAD y dirección de cruce automática",
+    "capacidad y latencia reales",
+    "compilación Windows y workflows remotos",
+    "validación del interesado y aceptación docente",
+    "DACL de archivos/copias en Windows real",
+    "Resistencia a ataques de presentación y errores biométricos: modelo PAD integrado, sin eficacia local medida",
+    "Auditoría de penetración independiente y seguridad ante control de la cuenta del SO",
+    "ataques de presentación reales, máscaras/deepfakes e inyección de cámara",
+    "precisión de PAD por captura y del flujo temporal completo"
+  ],
+  "nota": "Lógica/DOM con escenarios sintéticos; tres modelos preentrenados reales. No hay datos personales reales ni fotos en el paquete, ni tasas de eficacia local. Una prueba técnica aprobada no certifica detección de suplantación.",
+  "auditoria_dependencias": {
+    "python": {
+      "herramienta": "pip-audit 2.10.1",
+      "versiones_fijadas_consultadas": 25,
+      "vulnerabilidades_conocidas_reportadas": 0
+    },
+    "node": {
+      "herramienta": "npm audit --package-lock-only",
+      "vulnerabilidades_reportadas": 0
+    },
+    "limite": "No analiza código propio, binarios Qt/FFmpeg ni dependencias extra de Windows o vulnerabilidades desconocidas."
+  },
+  "pytest_pad_posterior": {
+    "aprobados": 21,
+    "fallidos": 0,
+    "tiempo_segundos": 5.01,
+    "motivo": "Se agregaron denominadores de capturas evaluables al reporte."
+  },
+  "modelo_PAD": {
+    "modelo": "anti-spoof-mn3",
+    "sha384_contrasta_fuente": true,
+    "manifest": "models/pad/manifest.json",
+    "licencia": "MIT",
+    "nuevas_dependencias": false,
+    "eficacia_local_medida": false,
+    "liveness_certificado": false
+  }
+}

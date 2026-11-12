@@ -1,0 +1,139 @@
+{
+  "dependencies": [
+    {
+      "name": "annotated-doc",
+      "version": "0.0.5",
+      "vulns": []
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "vulns": []
+    },
+    {
+      "name": "anyio",
+      "version": "4.15.1",
+      "vulns": []
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1",
+      "vulns": []
+    },
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "vulns": []
+    },
+    {
+      "name": "cryptography",
+      "version": "50.0.2",
+      "vulns": []
+    },
+    {
+      "name": "fastapi",
+      "version": "0.143.2",
+      "vulns": []
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "vulns": []
+    },
+    {
+      "name": "numpy",
+      "version": "2.3.5",
+      "vulns": []
+    },
+    {
+      "name": "opencv-python-headless",
+      "version": "5.0.0.93",
+      "vulns": []
+    },
+    {
+      "name": "opentelemetry-api",
+      "version": "1.45.1",
+      "vulns": []
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0",
+      "vulns": []
+    },
+    {
+      "name": "pycparser",
+      "version": "3.11",
+      "vulns": []
+    },
+    {
+      "name": "pydantic",
+      "version": "2.14.1",
+      "vulns": []
+    },
+    {
+      "name": "pydantic-core",
+      "version": "2.50.1",
+      "vulns": []
+    },
+    {
+      "name": "pyside6",
+      "version": "6.12.0",
+      "vulns": []
+    },
+    {
+      "name": "pyside6-addons",
+      "version": "6.12.0",
+      "vulns": []
+    },
+    {
+      "name": "pyside6-essentials",
+      "version": "6.12.0",
+      "vulns": []
+    },
+    {
+      "name": "pyside6-pdf",
+      "version": "6.12.0.140",
+      "vulns": []
+    },
+    {
+      "name": "pyside6-webengine",
+      "version": "6.12.0.140",
+      "vulns": []
+    },
+    {
+      "name": "shiboken6",
+      "version": "6.12.0",
+      "vulns": []
+    },
+    {
+      "name": "starlette",
+      "version": "1.8.0",
+      "vulns": []
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.4",
+      "vulns": []
+    },
+    {
+      "name": "uvicorn",
+      "version": "0.54.0",
+      "vulns": []
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "vulns": []
+    }
+  ],
+  "fixes": [],
+  "scan_metadata": {
+    "date": "2026-10-17",
+    "tool": "pip-audit 2.10.1",
+    "requirement": "constraints-seguridad.txt",
+    "mode": "--no-deps --disable-pip: consulta explícita de cada versión fijada",
+    "audited_packages": 25,
+    "known_vulnerabilities_found": 0,
+    "scope": "Versiones Python listadas; no análisis binario de Qt/FFmpeg ni garantía de dependencias adicionales de otra plataforma."
+  }
+}

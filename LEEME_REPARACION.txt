@@ -1,0 +1,21 @@
+REPARACION DEL INICIO - ACCESO RESIDENCIAL
+
+1. Si no tienes Python 3.11, 3.12 o 3.13, instala Python 3.12 (Windows 64 bits):
+   https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe
+   Activa la opcion del instalador "Add python.exe to PATH".
+   No hace falta desinstalar otras versiones.
+
+2. Extrae TODOS los archivos de este ZIP dentro de la carpeta original de
+   la aplicacion, donde estan iniciar.py y requirements.txt.
+   Acepta reemplazar ABRIR_ACCESO.bat.
+
+3. Abre ABRIR_ACCESO.bat con doble clic.
+
+Este parche no contiene la aplicacion completa. Necesita la carpeta original.
+Selecciona Python compatible antes de instalar dependencias. Si el entorno
+.venv anterior es incompatible, lo renombra a .venv-anterior-... y crea otro.
+La carpeta data y los registros de la aplicacion no se modifican.
+La primera preparacion necesita internet para instalar las dependencias.
+
+Verificacion: logica probada con versiones simuladas y carpetas temporales.
+El inicio de Windows debe comprobarse en tu equipo.

@@ -1,0 +1,16 @@
+{
+  "fuentes_leidas": [
+    {
+      "fuente": "https://github.com/datamaq-automation/spec/blob/main/backend/srs-spec-backend-fastapi.md",
+      "consultada": "2026-10-15",
+      "sha256_contenido_descargado": "5561133fd1d3f867589e61e0158c4a915144ab202dc202694acb7f0b95b55858"
+    },
+    {
+      "fuente": "https://github.com/datamaq-automation/spec/blob/main/docs/guia-andamiaje-proyectos.md",
+      "consultada": "2026-10-15",
+      "sha256_contenido_descargado": "d39b46ecf65e70f5d7a22ec61485ca2c05587c778f0c33e74041956bf7ed1249"
+    }
+  ],
+  "institucional": "https://isftn199.com.ar/cursos/practicas-profesionales-proyecto-integrador",
+  "institucional_estado": "403 en esta revisión; consignas curriculares tomadas del contexto maestro aportado por el estudiante, no verificación de la página."
+}

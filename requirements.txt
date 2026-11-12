@@ -1,0 +1,7 @@
+-c constraints-seguridad.txt
+fastapi==0.143.2
+uvicorn==0.54.0
+opencv-python-headless==5.0.0.93
+numpy==2.3.5
+pillow==12.3.0
+cryptography==50.0.2
