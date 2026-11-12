@@ -1,5 +1,7 @@
 # Estado 0.7 · 17 de octubre de 2026
 
+Este archivo registra el alcance funcional de la versión 0.7. Actualización del 12/11/2026: el código está publicado en [TrainPulga/acceso-residencial](https://github.com/TrainPulga/acceso-residencial) y el workflow de pruebas pasó en Ubuntu y Windows para el commit `6b67b70d586c1d920d1424b2173809f63c42da65` ([ejecución](https://github.com/TrainPulga/acceso-residencial/actions/runs/43315212789)). Ese resultado de CI cubre pruebas automatizadas; no reemplaza las verificaciones de campo enumeradas abajo.
+
 ## Implementado y alcance vigente
 
 Cámara de acceso seleccionable, reconocimiento de residentes con YuNet/SFace y PAD RGB mediante anti-spoof-mn3. No se pide PIN. Para emitir confirmación se requieren calidad, coincidencia, tres capturas distintas que superen PAD, misma identidad/fuente/sesión y separación temporal. Error, incertidumbre, posible presentación o repetición no habilita registro. Una captura posterior que falla invalida el token anterior. Fuentes del servidor usan su captura, no imágenes subidas atribuidas a ellas.
@@ -12,7 +14,7 @@ Esquema 6 con respaldo, sesiones revocadas y datos anteriores conservados. No se
 
 ## Evidencia técnica ejecutada
 
-170 pruebas Python aprobadas (42,66 s) con un aviso de deprecación Starlette/httpx. El módulo PAD incluye 21 casos contando parametrización; se volvió a ejecutar después de ampliar el reporte entre capturas evaluables (21 aprobados en 5,01 s). Hay datos sintéticos de lógica, verificación del contrato/preprocesamiento y ejecución de pesos reales con píxeles artificiales; no son mediciones de personas o ataques humanos.
+La corrida local documentada en `VERIFICACION_TECNICA.json` registró 170 pruebas Python aprobadas (42,66 s) con un aviso de deprecación Starlette/httpx. El módulo PAD incluye 21 casos contando parametrización; se volvió a ejecutar después de ampliar el reporte entre capturas evaluables (21 aprobados en 5,01 s). Hay datos sintéticos de lógica, verificación del contrato/preprocesamiento y ejecución de pesos reales con píxeles artificiales; no son mediciones de personas o ataques humanos. La ejecución posterior de GitHub Actions está enlazada arriba.
 
 SHA-384 de los pesos PAD coincide con la huella publicada y se incluye SHA-256 local. Inferencia real del ONNX verificada, sin trasladar métricas del autor al edificio. HTTP real 0.7/esquema 6, sesión, modelos de identidad y PAD cargados, sin PIN obligatorio y cierre controlado comprobados. DOM simulado: roles/login/logout/limpieza, estados PAD, registro sin PIN, selector webcam, observación y clips. 177 IDs únicos y referencias literales verificados. No es render Qt ni cámara real.
 
@@ -24,4 +26,4 @@ Eficacia de PAD con personas presentes, fotos impresas, fotos/videos en pantalla
 
 No se entrega ejecutable Windows compilado, cerraduras, apertura física, detección automática de dirección/cruce, búsqueda nominal entre cámaras ni garantía de compatibilidad universal o capacidad ilimitada. Sin medición local no se declara la aplicación apta para controlar puertas.
 
-Para el Proyecto Integrador faltan validar problema/interesado/recorte docente, autorizaciones y experimento, informe con resultados reales, repositorio propio limpio y defensa. El software y los tests no equivalen a aprobación académica. PAD_0_7.md explica qué medir; SRS_SSOT y MATRIZ_CUMPLIMIENTO registran el alcance.
+Para el Proyecto Integrador falta documentar problema/interesado y confirmar el recorte con el docente, acordar autorizaciones, ejecutar el experimento, elaborar el informe con resultados reales y preparar la defensa. El repositorio propio ya está publicado; su higiene debe mantenerse al agregar cambios. El software y los tests no equivalen a aprobación académica. PAD_0_7.md explica qué medir; SRS_SSOT y MATRIZ_CUMPLIMIENTO registran el alcance.

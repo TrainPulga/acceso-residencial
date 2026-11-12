@@ -119,5 +119,16 @@
     "nuevas_dependencias": false,
     "eficacia_local_medida": false,
     "liveness_certificado": false
+  },
+  "ci_publica": {
+    "fecha": "2026-11-12",
+    "commit": "6b67b70d586c1d920d1424b2173809f63c42da65",
+    "workflow": "Pruebas del piloto",
+    "url": "https://github.com/TrainPulga/acceso-residencial/actions/runs/43315212789",
+    "resultado": "success",
+    "matriz": ["ubuntu-latest / Python 3.12", "windows-latest / Python 3.12"],
+    "incluye": ["pytest", "modelos ONNX con SHA-256", "npm test con Node 24"],
+    "no_incluye": ["cámara física", "validación biométrica con personas", "eficacia PAD local", "compilación del ejecutable Windows"],
+    "nota": "Este registro describe la ejecución del pipeline de ese commit; no extiende los resultados locales fechados 2026-10-17 ni constituye validación de campo."
   }
 }

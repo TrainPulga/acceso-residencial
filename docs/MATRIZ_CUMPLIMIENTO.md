@@ -2,6 +2,8 @@
 
 Estado al 17/10/2026. «Implementado» no significa probado con residentes ni aprobado por el profesor.
 
+La publicación del repositorio y el estado actual del CI se actualizaron después de esta fecha; ver [ESTADO_ENTREGA.md](ESTADO_ENTREGA.md) y [GITHUB_Y_DISTRIBUCION.md](GITHUB_Y_DISTRIBUCION.md). Esta matriz describe requisitos y evidencia del software, no sustituye resultados del experimento de campo.
+
 ## Consignas generales aportadas por el estudiante
 
 | Exigencia | Evidencia construida | Falta para cerrar |

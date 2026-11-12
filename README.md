@@ -1,5 +1,20 @@
 # Acceso Residencial · Escritorio local 0.7
 
+[![Pruebas del piloto](https://github.com/TrainPulga/acceso-residencial/actions/workflows/tests.yml/badge.svg)](https://github.com/TrainPulga/acceso-residencial/actions/workflows/tests.yml)
+
+Proyecto Integrador de Ciencia de Datos e IA. El prototipo explora si la verificación facial local, con posibilidad de abstenerse, puede asistir el registro de pasos observados en un acceso residencial. El caso surge del interés comunicado por un encargado de edificios; el procedimiento actual, una falla concreta y la aceptación del consorcio todavía requieren documentarse.
+
+**Pregunta:** ¿cómo se compara una decisión con umbral y margen frente a elegir siempre la identidad más parecida, usando sesiones separadas e intentos de personas no inscritas? La app integra detección, representaciones faciales preentrenadas, evaluación experimental, control PAD RGB, operación local y registro asistido. No abre puertas ni demuestra por sí sola la identidad o el cruce.
+
+| Estado | Evidencia |
+|---|---|
+| Código y documentación | Repositorio público [TrainPulga/acceso-residencial](https://github.com/TrainPulga/acceso-residencial) |
+| Pruebas automáticas | GitHub Actions aprobó Python, dependencias de escritorio en Windows y smoke de frontend en Linux y Windows ([ejecución](https://github.com/TrainPulga/acceso-residencial/actions/runs/43315212789)) |
+| Validación con personas y ataques | Pendiente; no hay tasas locales de reconocimiento ni eficacia PAD medidas |
+| Aprobación del recorte y cierre académico | Pendientes; el software no equivale a aprobación docente |
+
+Para una revisión rápida, empezar por [la guía de evaluación](docs/GUIA_EVALUACION.md), [la matriz de trazabilidad](docs/MATRIZ_CUMPLIMIENTO.md) y [la especificación SRS/SSOT](docs/SRS_SSOT.md). Las instrucciones para agentes y herramientas están en [AGENTS.md](AGENTS.md).
+
 > **Copia de GitHub:** los lanzadores descargan los tres modelos ONNX en el primer inicio y comprueban su SHA-256. Para preparar los modelos por separado, ejecutá `python descargar_modelos.py`. Los manifiestos y las licencias están en `models/`. El ZIP original de escritorio sí incluye los pesos.
 
 Proyecto Integrador de Ciencia de Datos e IA. Verificación asistida de residentes, control PAD RGB de fotos/pantallas, visitas y registro manual de pasos. Separado de PulguiFly. **No abre cerraduras ni se presenta como un producto de seguridad certificado.**
@@ -14,7 +29,7 @@ Proyecto Integrador de Ciencia de Datos e IA. Verificación asistida de resident
 
 Los datos quedan en **%LOCALAPPDATA%\AccesoResidencial\data**, fuera del programa, o en ACCESO_DATA_DIR si se configuró. Se migra a esquema 6 con respaldo previo, preservando cuentas, residentes, plantillas y visitas. El motor de identidad YuNet/SFace no cambia; PAD tiene pesos y manifiesto separados. **No se pide PIN para entradas ni salidas en 0.7.** Los hashes PIN históricos quedan conservados como datos heredados; no habilitan ni bloquean una verificación.
 
-`ABRIR_ACCESO.bat` conserva el modo navegador, usando la misma ubicación. Cerrar una modalidad antes de abrir la otra. Este ZIP contiene código y modelos; todavía no es un .exe compilado ni un instalador. Hay una receta de compilación Windows y un workflow manual, sin ejecución/validación remota atribuida.
+`ABRIR_ACCESO.bat` conserva el modo navegador, usando la misma ubicación. Cerrar una modalidad antes de abrir la otra. Este ZIP contiene código y modelos; todavía no es un .exe compilado ni un instalador. Hay una receta de compilación Windows y un workflow manual para generar un artefacto sin firmar. El CI que pasó verifica tests y entorno de ejecución, no compila ni certifica el instalador.
 
 ## Verificar un residente y registrar un paso
 
@@ -76,11 +91,23 @@ SRS_SSOT.md y MATRIZ_CUMPLIMIENTO.md enlazan requisitos, implementación y evide
 
 ## Verificación técnica y organización
 
-Instalar `requirements-dev.txt` y ejecutar `python -m pytest -q`. Las pruebas verifican flujos con datos sintéticos y carga/inferencia de modelos reales; **no son ensayos con personas ni demuestran eficacia antisuplantación**. Ver VERIFICACION_TECNICA.json. Node/jsdom son herramientas de desarrollo opcionales: `npm ci --ignore-scripts` y `npm test`; no se necesitan para abrir el escritorio.
+En una copia limpia, instalar Python 3.12, Git y Node 24 o compatible con `package.json`; luego ejecutar:
+
+```bash
+git clone https://github.com/TrainPulga/acceso-residencial.git
+cd acceso-residencial
+python -m pip install -r requirements-dev.txt
+python descargar_modelos.py
+python -m pytest -q
+npm ci --ignore-scripts
+npm test
+```
+
+`descargar_modelos.py` obtiene los pesos publicados y comprueba sus hashes. Las pruebas verifican flujos con datos sintéticos y carga/inferencia de modelos reales; **no son ensayos con personas ni demuestran eficacia antisuplantación**. El workflow de GitHub ejecuta estas comprobaciones en Linux y Windows. Ver [la guía de evaluación](docs/GUIA_EVALUACION.md) y [el registro técnico](docs/VERIFICACION_TECNICA.json). Node/jsdom son herramientas de desarrollo; no se necesitan para abrir el escritorio.
 
 - `access_app/`: API, lógica, PAD, fuentes, persistencia, panel y evaluación.
 - `models/`: identidad y `pad/` con pesos, hashes y licencias.
 - `tests/`: lógica, seguridad, modelos, cámara y DOM simulado.
-- `docs/`: SSOT, operación, protocolo y estado real.
+- `docs/`: SSOT, trazabilidad, operación, protocolo, límites y evidencia.
 
 No hay cupo artificial de residentes, pero capacidad/latencia dependen del equipo y no se demostraron ilimitadas. La consulta de dependencias y sus restricciones de versiones se conserva desde 0.6; no se añadieron paquetes para PAD. La cadena de suministro/binarios nativos y la operación Windows/cámaras del edificio todavía requieren validación.
